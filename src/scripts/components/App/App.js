@@ -8,6 +8,7 @@
 import React, { Component } from 'react';
 
 import Clock from './../Clock/Clock.js';
+import Weather from './../Weather/Weather.js';
 
 import styles from './app.module.scss';
 
@@ -103,6 +104,7 @@ export default class App extends Component {
       <center>
         <div className={styles.main}>
           <Clock />
+          <Weather />
         </div>
       </center>
     );
