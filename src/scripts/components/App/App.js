@@ -1,15 +1,13 @@
 /*
  * This file is part of the Magic Mirror application.
  *
- * (c) APT AS
- *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
 import React, { Component } from 'react';
 
-import logo from 'gfx/apt-logo.svg';
+import Clock from './../Clock/Clock.js';
 
 import styles from './app.module.scss';
 
@@ -61,9 +59,9 @@ export default class App extends Component {
    *
    * @param {Object} props
    */
-  // constructor(props) {
-  //   super(props);
-  // }
+  constructor(props) {
+    super(props);
+  }
 
   /**
    * React lifecycle method, invoked immediately after a component is mounted.
@@ -102,21 +100,11 @@ export default class App extends Component {
    */
   render() {
     return (
-      <div className={styles.main}>
-        <article>
-          <header>
-            <h1>Hello world!</h1>
-          </header>
-
-          <section className={styles.illustration}>
-            <img src={logo} alt="" />
-          </section>
-
-          <section>
-            <p>This site was generated with the apt-generator.</p>
-          </section>
-        </article>
-      </div>
+      <center>
+        <div className={styles.main}>
+          <Clock />
+        </div>
+      </center>
     );
   }
 }

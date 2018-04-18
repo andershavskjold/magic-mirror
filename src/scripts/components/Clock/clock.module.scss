@@ -1,0 +1,44 @@
+$clock-size: 4em;
+
+@font-face {
+    font-family: 'ONEDAY';
+    font-style: normal;
+    font-weight: 400;
+    src:
+      local('ONEDAY'),
+      url('fonts/ONEDAY.otf') format('opentype');
+}
+
+.main {
+    display: inline-flex;
+    font-size: $clock-size;
+    font-family: 'ONEDAY';
+}
+
+.clockWrapper {
+    position: relative;
+
+    .cipherBlock {
+        display: inline-flex;
+        height: auto;
+        width: $clock-size / 3;
+        margin-left: 6px;
+        justify-content: space-between;
+    }
+    
+    .cipher {
+        display: inline-block;
+        width: 50%;
+        height: auto;
+        text-align: center;
+        margin: 1px;
+    }
+    
+    .seconds {
+        position: absolute;
+        bottom: -9px;
+        left: 0px;
+        transform: scale(0.7);
+        opacity: 0.3;
+    }
+}
