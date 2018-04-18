@@ -1,0 +1,31 @@
+:root { font-size: $root-font-size; }
+
+body {
+  color: $color-font-base;
+}
+
+h1 {}
+h2 {}
+h3 {}
+h4 {}
+h5 {}
+h6 {}
+
+p {}
+
+address {}
+
+a {
+  color: $color-link;
+  text-decoration: none;
+
+  transition: color 200 ease-out;
+
+  &:hover { color: $color-link-hover; }
+}
+
+b,
+strong { font-weight: 700; }
+
+i,
+em { font-style: italic; }

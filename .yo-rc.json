@@ -1,0 +1,22 @@
+{
+  "generator-apt": {
+    "promptValues": {
+      "name": "Magic Mirror",
+      "author": "anders.havskjold",
+      "authorEmail": "anders@havskjold.no",
+      "backend": "Node.js",
+      "frontend": "React",
+      "css": false,
+      "cssModules": true
+    },
+    "props": {
+      "backend": "node",
+      "frontend": "react",
+      "publicPath": "public",
+      "srcPath": "src",
+      "css": false,
+      "cssModules": true,
+      "componentsPath": "src/scripts/components"
+    }
+  }
+}

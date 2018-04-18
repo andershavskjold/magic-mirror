@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>This is the site title. Google typically displays the first 50-60 characters of a title tag.</title>
+
+  <meta name="description" content="This is an example of a meta description. The description should optimally be between 150-160 characters.">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="A clear title without branding or mentioning the domain itself.">
+  <meta property="og:type" content="The type of object.">
+  <meta property="og:url" content="A URL with no session id or extraneous parameters. All shares on Facebook will use this as the identifying URL for this article.">
+  <meta property="og:image" content="Use images that are at least 1200 x 630 pixels for the best display on high resolution devices.">
+  <meta property="og:description" content="A clear description, at least two sentences long.">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="The card type e.g. summary_large_image">
+  <meta name="twitter:site" content="@username of website. Either twitter:site or twitter:site:id is required.">
+  <meta name="twitter:title" content="Title of content (max 70 characters).">
+  <meta name="twitter:description" content="Description of content (maximum 200 characters).">
+  <meta name="twitter:creator" content="@username of content creator.">
+  <!-- Twitter Summary card images must be at least 120x120px -->
+  <meta name="twitter:image" content="URL of image to use in the card. Image must be less than 1MB in size.">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+  <meta name="msapplication-TileColor" content="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <% htmlWebpackPlugin.files.js.forEach((filePath, i) => { %>
+    <%if (i === 0) { return; } %>
+    <link rel="preload" as="script" href="<%= filePath %>">
+  <% }) %>
+
+  <% htmlWebpackPlugin.files.css.forEach((filePath) => { %>
+    <link rel="preload" as="style" href="<%= filePath %>">
+  <% }) %>
+
+  <% htmlWebpackPlugin.files.css.forEach((filePath) => { %>
+    <link rel="stylesheet" href="<%= filePath %>">
+  <% }) %>
+
+  <script>
+    window.__PRELOADED_STATE__ = <%= JSON.stringify({}) %>;
+  </script>
+</head>
+
+<body class="no-touch">
+  <div id="root"></div>
+
+  <% htmlWebpackPlugin.files.js.forEach((filePath, i) => { %>
+    <% if (i === 0) { %>
+      <script><%= compilation.assets[filePath.substr(htmlWebpackPlugin.files.publicPath.length)].source() %></script>
+    <% } else { %>
+      <script src="<%= filePath %>" defer></script>
+    <% } %>
+  <%}) %>
+</body>
+
+</html>
